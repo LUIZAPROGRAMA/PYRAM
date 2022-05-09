@@ -1,0 +1,828 @@
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+
+/*---------  MI PROPIO CODIGO  --------- */
+
+
+.contenedor {
+  transition: 0.6s;
+}
+
+.contenedor#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+h1  {
+    font-weight: 650;
+    font-size: 50px;
+    margin: 0px;
+    background-color: #d68a8a;
+    text-align: center;
+    
+}
+
+h1 a{
+    text-decoration: none;
+    color:darkslategray;
+}
+
+#barra-superior {
+    width: 100%;
+    height: 40px;
+    display: block;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    word-spacing: 50mm;
+    text-transform: capitalize;
+}
+
+#OPCIONES{
+    height: 100%;
+}
+
+#OPCIONES a{
+    height: 100%;
+    display: inline-block;
+    padding: 12px 20px;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+
+}
+
+#OPCIONES a li{
+    vertical-align: middle ;
+    height: 100%;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#OPCIONES a li:hover{
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+#user-welcome {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    font-size: 19px;
+    background-color: rgba(0, 0, 0, 0.596);
+    font-family: 'Oswald', sans-serif;
+    word-spacing: 22pt;
+    text-align: center;
+    padding: 8px 20px;
+    border-radius: 2px;
+}
+
+
+#libreria-discos {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 90px;
+    margin: 100px;
+    text-align: center;
+}
+
+#libreria-discos a {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;   
+}
+
+#libreria-discos p{
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#libreria-discos img{
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#libreria-discos img:hover{
+    width: 210px;
+    height: 210px;
+    transition: 0.5s;
+}
+
+#LOGIN.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#LOGIN.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+#err-log{
+    color: red;
+    margin-top: -8px;
+    margin-bottom: 12px;
+}
+
+.err-com{
+    color: red;
+    margin-top: -8px;
+    margin-bottom:-20px;
+}
+
+.container{
+    background: #fff;
+    width: 410px;
+    padding: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Oswald', sans-serif;
+}
+
+.container .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container .close-btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.container .close-btn a:hover {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.container .text{
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.container form{
+    margin-top: -20px;
+}
+
+.container form .data{
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+form .data label{
+    font-size: 18px;
+}
+
+form .data input{
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 5px;
+    font-size: 17px;
+    border: 1px solid lightgray;
+}
+
+form.data input:focus{
+    border-color: navajowhite;
+    border-bottom-width: 2px;
+}
+
+form .forgot-password{
+    margin-top: -8px;
+}
+
+form .forgot-password a{
+    color: lightslategrey;
+    text-decoration: none;
+}
+
+form .forgot-password a:hover{
+    text-decoration: underline;
+}
+
+form .btn{
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+form .btn .inner{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+}
+
+form .btn button{
+    height: 100%;
+    width: 100%;
+    background: lightpink;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+form .signup-link{
+    text-align: center;
+}
+
+form .signup-link a{
+    color: lightslategrey;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+form .signup-link a:hover{
+    text-decoration: underline;
+}
+
+
+#REGISTER.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#REGISTER h5{
+    color: red;
+}
+
+#REGISTER.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+#MODAL1.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.7s; 
+}
+
+#MODAL1.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.7s;
+}
+
+.container a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    transition: 0.3s;
+}
+
+.container a:hover{
+    color: rgb(104, 103, 103);
+    transition: 0.3s;
+}
+
+.container h4{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 20px;
+}
+
+#MODAL2.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.7s; 
+}
+
+#MODAL2.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.7s;
+}
+
+#MODAL3.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#MODAL3.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#MODAL4.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#MODAL4.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#MODAL5.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#MODAL5.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#MODAL6.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#MODAL6.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#MODAL7.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#MODAL7.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#MODAL8.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#MODAL8.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.titulo-modal{
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.img-modal{
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 3rem;
+}
+
+.btn-compra{
+    text-align: center;
+    margin-left: 9rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn-compra:hover{
+    background-color: lightcoral;
+    transition: 0.3s;
+}
+
+.cart-panel {
+    font-family: 'Oswald', sans-serif;
+    position: fixed;
+    height: 100%;
+    width:300px;
+    right: -560px;
+    top:0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.5);
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* scrollbar-width: thin;
+    scrollbar-color: dark; */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.cart-header {
+    width: 100%;
+    height:40px;
+    font-size:3em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.cart-header  h4 {
+    font-weight: normal;
+    color: black;
+}
+.cart-header button {
+    border:none;
+    outline:none;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    background: linear-gradient(rgb(255, 255, 255), darkslategray);
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 99px;
+    background-size: 1px 100px;
+    transition: 0.2s;
+
+}
+.cart-header button:hover {
+    background-position: 100px;
+    transition: 0.2s;
+}
+
+#carrito-cuadro{
+    height: 65%;
+    overflow-y: auto;
+    overflow-x:hidden;
+    margin-right: -15px;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.product {
+    width: 90%;
+    height: 100px;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    color:rgb(31, 31, 31);
+}
+
+.title{
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.product button {
+    border:none;
+    outline:none;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    background-color:darkgray;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 99px;
+    font-size:1em;
+    color: #fafafa;
+}
+.product button:hover {
+    background-color: #333;
+}
+.cart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+}
+.checkout-button button {
+    width: 100%;
+    height: 60px;
+    border:none;
+    outline: none;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    background: #333;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:rgb(136, 135, 135);
+    font-size:1em;
+    font-weight: bolder;
+    cursor:pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.checkout-button button i {
+    font-size: 2em;
+}
+
+#msj-compra{
+    font-size: 16px;
+    color: red;
+    text-align: center;
+    padding: 10px;
+    margin-top: -15px;
+}
+
+#msj-compra a{
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#precio-total{
+    padding: 8px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quiz-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    visibility: hidden;
+    background: #fff;
+    width: 410px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Oswald', sans-serif;
+    border-radius: 8px;
+    padding-top: 35px;
+    opacity: 0;
+    transition: 0.6s; 
+}
+
+.quiz-container h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.quiz-container li{
+    list-style-type: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.quiz-container ul li label{
+    cursor: pointer;
+}
+
+
+.quiz-container button{
+    display: block;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 1rem;
+    background-color: #d68a8a;
+    font-family: inherit;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-container button:hover{
+   background-color : #d46969;
+   transition: 0.2s;
+}
+
+.quiz-container h3{
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+    padding-bottom: 1.5rem;
+}
+
+#quiz.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+.quiz-container .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quiz-container .close-btn a{
+    text-decoration: none;
+    color: black;
+}
+
+#msj-dis.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+#msj-com.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+#msj-reg.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+#msj-reg button{
+    background-color: rgb(101, 214, 101);
+}
+
+#msj-reg button:hover{
+    background-color: rgb(64, 175, 64);
+}
+
+#PAGO.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+}
+
+#PAGO.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.8s;
+}
+
+#msj-com h3{
+   font-size: 25px;
+   margin: 8px;
+   padding-left: 15px;
+   padding-right: 15px;
+   line-height: 1.2;
+
+}

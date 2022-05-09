@@ -1,0 +1,8 @@
+[
+    {"pregunta": "Qué prefieres: playa o bosque?","a": "Playa","b": "Bosque"},
+    {"pregunta": "Disfrutas mas tu tiempo: solo o acompañado?","a": "Solo","b": "Acompañado"},
+    {"pregunta": "Sientes que piensas mas en: el pasado o el futuro?","a": "Pasado","b": "Futuro"},
+    {"pregunta": "Que color prefieres: amarillo o verde?","a": "Amarillo","b": "Verde"},
+    {"pregunta": "Crees que las maquinas son: cálidas o frias?","a": "Cálidas","b": "Frias"},
+    {"pregunta": "Es mas lo que recuerdas o lo que olvidas?","a": "Recuerdo","b": "Olvido"}
+]

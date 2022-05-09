@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PYRAM</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor" id="blur">
+  <h1 id = "PYRAM" title="HOME">
+    <a href="index.html">PYRAM</a>
+  </h1>
+    <nav id = "barra-superior" >
+      <div id=  "caja-menu">
+          <ul id="OPCIONES">
+            <a href="index.html" >
+              <li>HOME</li>
+             </a> 
+           <a id="dispenser-btn" href="#" onclick="toggleDispenser()">
+             <li>DISPENSER</li>
+            </a> 
+           <a>
+             <li id="btn-carrito">CARRITO</li>
+            </a>
+           <a href="#" onclick="toggle()" id="login-btn">
+             <li>LOGIN</li>
+            </a> 
+          </ul>
+      </div> 
+    </nav>
+    
+    <!--SECCION DISCOS PARA COMPRAR-->
+    <h4 title="Discos disponibles"></h4>
+    <div id="libreria-discos"></div>
+    
+</div>
+
+<div class="center">
+  <div id="modales-releases"></div>
+</div>
+     <!--modal login-->  
+<div class="center">
+    <div id="LOGIN" class="container">
+      <label for="" class="close-btn"><a href="#" onclick="toggle()">✖</a></label>
+      <div class="text">Login</div>
+      <form id="login-form" action="#">
+        <div class="data">
+          <label>Username</label>
+          <input id= "usr-login" type="text" required>
+        </div>
+        <div class="data">
+          <label >Password</label>
+          <input id= "pass-login" type="password" required>
+        </div>
+        <!-- <div class="forgot-password"><a href="#">Olvidaste tu password?</a></div> -->
+        <div class="btn">
+          <div class="inner">
+            <button onclick="login()" type="submit">login</button>
+          </div>
+        </div>
+        <div class="signup-link">Aun no estas registrado?<a id="register-btn" href="#" onclick="toggleRegister()">Registrate ahora</a></div>
+      </form>
+    </div>
+</div> 
+    <!--modal register-->  
+<div class="center">
+  <div id="REGISTER" class="container">
+    <label for="" class="close-btn"><a href="#" onclick="toggleRegister()">✖</a></label>
+    <div class="text">Register</div>
+    <form id="register-form" action="#">
+      <div class="data">
+        <label>Email</label>
+        <input id="email-register" type="text" required>
+      </div>
+      <div class="data">
+        <label>Username</label>
+        <input id="usr-register" type="text" required>
+      </div>
+      <div class="data">
+        <label >Password</label>
+        <input id="pass-register" type="password" required>
+      </div>
+      <div class="data">
+        <label >Repeat Password</label>
+        <input id="pass-repeat" type="password" required>
+      </div>
+      <div class="btn">
+        <div class="inner">
+          <button onclick="register()" type="submit">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> 
+
+<div id="msj-reg" class="quiz-container">
+  <h3>Se ha registrado correctamente!</h3>
+  <button onclick="toggleContinue()">Continuar</button>
+</div>
+
+<div id="carrito-modal" class="cart-panel">
+  <div class="cart-header">
+      <button id="close-panel">
+          <i class="bi bi-arrow-right"></i>
+      </button>
+      <h4>Carrito</h4>
+  </div>
+  <div id="carrito-cuadro" class="cart-content">
+      <div class="products"></div>
+  </div>
+  <p id="precio-total">PRECIO TOTAL: </p>
+  <div id="compra" class="checkout-button">
+    <button>Pagar<i class="bi bi-arrow-right"></i></button>
+</div>
+</div>
+
+
+<div id="quiz" class="quiz-container">
+  <label for="" class="close-btn"><a href="#" onclick="toggleDispenser()">✖</a></label>
+  <h2 id="question">Texto de la pregunta</h2>
+  <ul>
+    <li>
+      <input type="radio" id="1"
+      name="answer"
+      class="answer">
+      <label id="a_text" for=“1”>Question</label>
+    </li>
+    <li>
+      <input type="radio" id="2"
+      name="answer"
+      class="answer">
+      <label id="b_text" for="2">Question</label>
+    </li>
+  </ul>
+  <button id="submit">Siguiente pregunta</button>
+</div>
+
+<div id="msj-dis" class="quiz-container">
+<h3>Desde pyram te recomendamos escuchar:</h3>
+</div>
+
+<div id="msj-com" class="quiz-container">
+  <label for="" class="close-btn"><a id="cerrar-compra" href="#" >✖</a></label>
+  <h3>Hemos enviado a tu E-mail el link de descarga, disfruta la musica!</h3>
+</div>
+
+<div class="center">
+  <div id="PAGO" class="container">
+    <label for="" class="close-btn"><a href="#" onclick="toggleCompra()">✖</a></label>
+    <div class="text">Informacion del Pago</div>
+    <form id="tarjeta-form" action="#">
+      <div class="data">
+        <label>Numero de Tarjeta</label>
+        <input id="tarjeta-nro" type="tel" pattern="\d*" maxlength="19" placeholder= "•••• •••• •••• ••••" required>
+      </div>
+      <div class="data">
+        <label>Codigo de seguridad de la tarjeta</label>
+        <input id="codigoTarjeta" type="text" placeholder= "•••" required>
+      </div>
+      <div class="data">
+        <label >Direccion</label>
+        <input id="direccion" type="text" placeholder= "Calle 123 Timbre A" required>
+      </div>
+      <div class="data">
+        <label >Codigo Postal</label>
+        <input id="postal" type="text" placeholder= "••••" required>
+      </div>
+      <div class="btn">
+        <div class="inner">
+          <button onclick="pagar()" type="submit">Pagar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> 
+
+<script src="assets/scripts/script.js"></script>
+</body>
+</html>
+
